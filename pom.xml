@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.iessoterohernandez.daw.endes</groupId>
-  <artifactId>Fibonacci</artifactId>
+  <artifactId>fibonacciMain</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>Fibonacci</name>
+  <name>fibonacciMain</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,6 +25,11 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>es.iessoterohernandez.daw.endes</groupId>
+    	<artifactId>Fibonacci</artifactId>
+   	 	<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 
   <build>
@@ -49,8 +54,16 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+			<artifactId>maven-jar-plugin</artifactId>
+        	<version>3.3.0</version>
+        	<configuration>
+          		<archive>
+            		<manifest>
+              			<addClasspath>true</addClasspath>
+              			<mainClass>es.iessoterohernandez.daw.endes</mainClass>
+            		</manifest>
+          		</archive>
+        	</configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
